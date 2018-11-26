@@ -1,1 +1,1 @@
-console.log("eslint test");
+window.console.log('eslint test')
