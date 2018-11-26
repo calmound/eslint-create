@@ -1,0 +1,64 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "rules": {
+    // 缩紧
+    "indent": ["warn", 2],
+    // 要求每个作用域有多个变量声明
+    "one-var": ["error", "never"],
+    // js用单引号
+    "quotes": ["error", "single"],
+    // jsx用双引号
+    "jsx-quotes": ["error", "prefer-double"],
+    // 不要分号
+    "semi": ["error", "never"],
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    //在自动关闭的标签前加一个空格, 正常情况下不需要换行
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    // 不要在JSX {} 引用括号里两边加空格
+    "react/jsx-curly-spacing": ["error", { "when": "never" }],
+    // 对于没有子元素的标签, 关闭标签
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": false
+      }
+    ],
+    // 关闭标签和开始标签所在的行对齐
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    // 标签对齐
+    "react/jsx-closing-tag-location": 0,
+    // 循环要有key值，为了兼容以前的
+    "react/jsx-key": 0,
+    // a标签的_blank属性不允许使用
+    "react/jsx-no-target-blank": 0,
+    // 不允许使用dangerouslySetInnerHTML
+    "react/no-danger-with-children": 0,
+    // 统一公用组件，对写代码能力要求有点高且繁琐
+    "react/no-deprecated": 0,
+    // 不能通过document来查找dom，只能通过ref
+    "react/no-find-dom-node": 0,
+    // 需要使用PropTypes
+    "react/prop-types": 0,
+    // ref限制
+    "react/no-string-refs": 0
+  },
+  "parser": "babel-eslint",
+  "plugins": ["babel", "react"],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "es6": true,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  }
+}
